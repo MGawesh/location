@@ -2,102 +2,56 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>أقرب صيدلية</title>
+  <title>فروع صيدليات المتحدة</title>
   <style>
-    #map {
-      height: 100vh;
-      width: 100%;
+    body {
+      font-family: sans-serif;
+      background-color: #f9f9f9;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+      color: #333;
+    }
+
+    .branch {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 500px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .branch h2 {
+      color: #007BFF;
+    }
+
+    .branch a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 15px;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .phone {
+      background-color: #007BFF;
+    }
+
+    .whatsapp {
+      background-color: #25D366;
+    }
+
+    .location {
+      background-color: #FF5722;
     }
   </style>
 </head>
 <body>
-  <div id="map"></div>
 
-  <script>
-    const pharmacies = [
-      { name: "صيدلية الرحمة", lat: 30.0444, lng: 31.2357 },
-      { name: "صيدلية الشفاء", lat: 30.0500, lng: 31.2400 },
-      { name: "صيدلية السلام", lat: 30.0465, lng: 31.2380 },
-      { name: "صيدلية نور", lat: 30.0480, lng: 31.2365 },
-      { name: "صيدلية الحياة", lat: 30.0455, lng: 31.2330 },
-      { name: "صيدلية البيان", lat: 30.0472, lng: 31.2372 },
-      { name: "صيدلية المستقبل", lat: 30.0430, lng: 31.2395 },
-      { name: "صيدلية العرب", lat: 30.0490, lng: 31.2340 },
-      { name: "صيدلية مينا", lat: 30.0422, lng: 31.2360 },
-      { name: "صيدلية سيف", lat: 30.0410, lng: 31.2388 },
-    ];
-
-    let map;
-
-    function initMap() {
-      // خريطة مبدئية في القاهرة
-      map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: 30.0444, lng: 31.2357 },
-        zoom: 14,
-      });
-
-      // عرض الصيدليات
-      pharmacies.forEach((pharmacy) => {
-        new google.maps.Marker({
-          position: { lat: pharmacy.lat, lng: pharmacy.lng },
-          map: map,
-          title: pharmacy.name,
-        });
-      });
-
-      // الحصول على موقع المستخدم
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((position) => {
-          const userPos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          };
-
-          // علامة المستخدم
-          new google.maps.Marker({
-            position: userPos,
-            map: map,
-            icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-            title: "مHوقعك الحالي",
-          });
-
-          map.setCenter(userPos);
-
-          // أقرب صيدلية
-          let closest = null;
-          let minDist = Number.MAX_VALUE;
-
-          pharmacies.forEach((pharmacy) => {
-            const dist = getDistance(userPos.lat, userPos.lng, pharmacy.lat, pharmacy.lng);
-            if (dist < minDist) {
-              minDist = dist;
-              closest = pharmacy;
-            }
-          });
-
-          alert("أقرب صيدلية ليك هي: " + closest.name);
-        });
-      } else {
-        alert("المتصفح لا يدعم تحديد الموقع.");
-      }
-    }
-
-    // دالة لحساب المسافة
-    function getDistance(lat1, lng1, lat2, lng2) {
-      const R = 6371;
-      const dLat = (lat2 - lat1) * Math.PI / 180;
-      const dLng = (lng2 - lng1) * Math.PI / 180;
-      const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-                Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-                Math.sin(dLng / 2) * Math.sin(dLng / 2);
-      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-      return R * c;
-    }
-  </script>
-
-  <!-- 🔑 Google Maps API Key -->
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-  </script>
-</body>
-</html>
+  <h1>فروع صيدليات المتحد
