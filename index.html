@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>فروع صيدليات المتحدة خميس مشيط وابها</title>
+  <title>فروع صيدليات المتحدة خميس مشيط وأبها</title>
   <style>
     body {
       font-family: 'Tahoma', sans-serif;
@@ -19,7 +19,7 @@
 
     table {
       width: 100%;
-      max-width: 900px;
+      max-width: 1100px;
       margin: auto;
       border-collapse: collapse;
       background-color: #ffffff;
@@ -31,6 +31,7 @@
     th, td {
       padding: 15px;
       border-bottom: 1px solid #ddd;
+      font-size: 14px;
     }
 
     th {
@@ -43,19 +44,39 @@
       border-radius: 6px;
       color: white;
       text-decoration: none;
-      font-size: 14px;
     }
 
-    .call {
-      background-color: #007BFF;
+    .call { background-color: #007BFF; }
+    .whatsapp { background-color: #25D366; }
+    .location { background-color: #FF5722; }
+
+    .copy-btn {
+      padding: 6px 10px;
+      background-color: #607D8B;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
     }
 
-    .whatsapp {
-      background-color: #25D366;
+    .footer-icons {
+      margin-top: 40px;
     }
 
-    .location {
-      background-color: #FF5722;
+    .footer-icons a {
+      display: inline-block;
+      margin: 10px 20px;
+      padding: 15px 25px;
+      background-color: #1976D2;
+      color: white;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .footer-icons a:hover {
+      background-color: #0d47a1;
     }
   </style>
 </head>
@@ -69,94 +90,123 @@
       <th>اتصال</th>
       <th>واتساب</th>
       <th>الموقع</th>
+      <th>نسخ</th>
     </tr>
 
-    <!-- صفوف الصيدليات -->
     <tr>
-      <td>صيدلية المتحدة 209 -البلد</td>
+      <td>صيدلية المتحدة 209 - البلد</td>
       <td><a class="call" href="tel:+966557216730">📞</a></td>
-      <td><a class="whatsapp" href="https://wa.me/96655721730">💬</a></td>
+      <td><a class="whatsapp" href="https://wa.me/966557216730">💬</a></td>
       <td><a class="location" href="https://maps.app.goo.gl/u5RDS1Tz29sSchr76?g_st=ipc">📍</a></td>
+      <td><button class="copy-btn" onclick="copyRow('صيدلية المتحدة 209 - البلد','+966557216730','https://wa.me/966557216730','https://maps.app.goo.gl/u5RDS1Tz29sSchr76?g_st=ipc')">نسخ</button></td>
     </tr>
     <tr>
-      <td>صيدلية المتحدة 46- حي عتود</td>
+      <td>صيدلية المتحدة 46 - حي عتود</td>
       <td><a class="call" href="tel:+966552689895">📞</a></td>
       <td><a class="whatsapp" href="https://wa.me/966562689895">💬</a></td>
       <td><a class="location" href="https://maps.app.goo.gl/W6QuFENfufWvSema6?g_st=ipc">📍</a></td>
+      <td><button class="copy-btn" onclick="copyRow('صيدلية المتحدة 46 - حي عتود','+966552689895','https://wa.me/966562689895','https://maps.app.goo.gl/W6QuFENfufWvSema6?g_st=ipc')">نسخ</button></td>
     </tr>
     <tr>
-      <td>صيدلية المتحدة 50-حي الحسام</td>
+      <td>صيدلية المتحدة 50 - حي الحسام</td>
       <td><a class="call" href="tel:+966551208147">📞</a></td>
       <td><a class="whatsapp" href="https://wa.me/966551208147">💬</a></td>
       <td><a class="location" href="https://maps.app.goo.gl/FW9MDPc6biSKFVQGA?g_st=ipc">📍</a></td>
+      <td><button class="copy-btn" onclick="copyRow('صيدلية المتحدة 50 - حي الحسام','+966551208147','https://wa.me/966551208147','https://maps.app.goo.gl/FW9MDPc6biSKFVQGA?g_st=ipc')">نسخ</button></td>
     </tr>
     <tr>
       <td>صيدلية المتحدة 104</td>
       <td><a class="call" href="tel:+966539657074">📞</a></td>
       <td><a class="whatsapp" href="https://wa.me/966539657074">💬</a></td>
       <td><a class="location" href="https://maps.app.goo.gl/Y9EXTLcNwPfdUWAQA">📍</a></td>
+      <td><button class="copy-btn" onclick="copyRow('صيدلية المتحدة 104','+966539657074','https://wa.me/966539657074','https://maps.app.goo.gl/Y9EXTLcNwPfdUWAQA')">نسخ</button></td>
     </tr>
+    <!-- باقي الفروع -->
     <tr>
       <td>صيدلية المتحدة 105</td>
       <td><a class="call" href="tel:+966500000105">📞</a></td>
       <td><a class="whatsapp" href="https://wa.me/966500000105">💬</a></td>
       <td><a class="location" href="https://maps.app.goo.gl/example105">📍</a></td>
+      <td><button class="copy-btn" onclick="copyRow('صيدلية المتحدة 105','+966500000105','https://wa.me/966500000105','https://maps.app.goo.gl/example105')">نسخ</button></td>
     </tr>
     <tr>
       <td>صيدلية المتحدة 106</td>
       <td><a class="call" href="tel:+966500000106">📞</a></td>
       <td><a class="whatsapp" href="https://wa.me/966500000106">💬</a></td>
       <td><a class="location" href="https://maps.app.goo.gl/example106">📍</a></td>
+      <td><button class="copy-btn" onclick="copyRow('صيدلية المتحدة 106','+966500000106','https://wa.me/966500000106','https://maps.app.goo.gl/example106')">نسخ</button></td>
     </tr>
     <tr>
       <td>صيدلية المتحدة 107</td>
       <td><a class="call" href="tel:+966500000107">📞</a></td>
       <td><a class="whatsapp" href="https://wa.me/966500000107">💬</a></td>
       <td><a class="location" href="https://maps.app.goo.gl/example107">📍</a></td>
+      <td><button class="copy-btn" onclick="copyRow('صيدلية المتحدة 107','+966500000107','https://wa.me/966500000107','https://maps.app.goo.gl/example107')">نسخ</button></td>
     </tr>
     <tr>
       <td>صيدلية المتحدة 108</td>
       <td><a class="call" href="tel:+966500000108">📞</a></td>
       <td><a class="whatsapp" href="https://wa.me/966500000108">💬</a></td>
       <td><a class="location" href="https://maps.app.goo.gl/example108">📍</a></td>
+      <td><button class="copy-btn" onclick="copyRow('صيدلية المتحدة 108','+966500000108','https://wa.me/966500000108','https://maps.app.goo.gl/example108')">نسخ</button></td>
     </tr>
     <tr>
       <td>صيدلية المتحدة 109</td>
       <td><a class="call" href="tel:+966500000109">📞</a></td>
       <td><a class="whatsapp" href="https://wa.me/966500000109">💬</a></td>
       <td><a class="location" href="https://maps.app.goo.gl/example109">📍</a></td>
+      <td><button class="copy-btn" onclick="copyRow('صيدلية المتحدة 109','+966500000109','https://wa.me/966500000109','https://maps.app.goo.gl/example109')">نسخ</button></td>
     </tr>
     <tr>
       <td>صيدلية المتحدة 110</td>
       <td><a class="call" href="tel:+966500000110">📞</a></td>
       <td><a class="whatsapp" href="https://wa.me/966500000110">💬</a></td>
       <td><a class="location" href="https://maps.app.goo.gl/example110">📍</a></td>
+      <td><button class="copy-btn" onclick="copyRow('صيدلية المتحدة 110','+966500000110','https://wa.me/966500000110','https://maps.app.goo.gl/example110')">نسخ</button></td>
     </tr>
     <tr>
       <td>صيدلية المتحدة 111</td>
       <td><a class="call" href="tel:+966500000111">📞</a></td>
       <td><a class="whatsapp" href="https://wa.me/966500000111">💬</a></td>
       <td><a class="location" href="https://maps.app.goo.gl/example111">📍</a></td>
+      <td><button class="copy-btn" onclick="copyRow('صيدلية المتحدة 111','+966500000111','https://wa.me/966500000111','https://maps.app.goo.gl/example111')">نسخ</button></td>
     </tr>
     <tr>
       <td>صيدلية المتحدة 112</td>
       <td><a class="call" href="tel:+966500000112">📞</a></td>
       <td><a class="whatsapp" href="https://wa.me/966500000112">💬</a></td>
       <td><a class="location" href="https://maps.app.goo.gl/example112">📍</a></td>
+      <td><button class="copy-btn" onclick="copyRow('صيدلية المتحدة 112','+966500000112','https://wa.me/966500000112','https://maps.app.goo.gl/example112')">نسخ</button></td>
     </tr>
     <tr>
       <td>صيدلية المتحدة 113</td>
       <td><a class="call" href="tel:+966500000113">📞</a></td>
       <td><a class="whatsapp" href="https://wa.me/966500000113">💬</a></td>
       <td><a class="location" href="https://maps.app.goo.gl/example113">📍</a></td>
+      <td><button class="copy-btn" onclick="copyRow('صيدلية المتحدة 113','+966500000113','https://wa.me/966500000113','https://maps.app.goo.gl/example113')">نسخ</button></td>
     </tr>
     <tr>
       <td>صيدلية المتحدة 114</td>
       <td><a class="call" href="tel:+966500000114">📞</a></td>
       <td><a class="whatsapp" href="https://wa.me/966500000114">💬</a></td>
       <td><a class="location" href="https://maps.app.goo.gl/example114">📍</a></td>
+      <td><button class="copy-btn" onclick="copyRow('صيدلية المتحدة 114','+966500000114','https://wa.me/966500000114','https://maps.app.goo.gl/example114')">نسخ</button></td>
     </tr>
   </table>
+
+  <div class="footer-icons">
+    <a href="https://unitedpharmacy.sa/offers" target="_blank">📘 مجلة العروض</a>
+    <a href="https://www.unitedpharmacy.sa" target="_blank">🌐 الموقع الإلكتروني</a>
+  </div>
+
+  <script>
+    function copyRow(name, phone, whatsapp, location) {
+      const text = `${name}\n📞 ${phone}\n💬 ${whatsapp}\n📍 ${location}`;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("✅ تم نسخ بيانات الصيدلية");
+      });
+    }
+  </script>
 
 </body>
 </html>
