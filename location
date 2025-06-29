@@ -58,7 +58,7 @@
             position: userPos,
             map: map,
             icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-            title: "موقعك الحالي",
+            title: "مHوقعك الحالي",
           });
 
           map.setCenter(userPos);
