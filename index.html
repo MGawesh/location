@@ -32,7 +32,7 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       padding: 25px;
       width: 310px;
-      text-align: right;
+      text-align: center;
       position: relative;
     }
 
@@ -42,14 +42,22 @@
       margin-bottom: 15px;
     }
 
+    .card .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
     .card a {
       text-decoration: none;
       color: white;
       padding: 10px 15px;
       border-radius: 8px;
-      margin-left: 8px;
       font-size: 16px;
-      display: inline-block;
+      min-width: 90px;
+      text-align: center;
     }
 
     .call { background-color: #007BFF; }
@@ -64,7 +72,6 @@
       padding: 10px 15px;
       font-size: 14px;
       cursor: pointer;
-      margin-top: 10px;
       width: 100%;
     }
 
@@ -93,9 +100,7 @@
 
   <h1>فروع صيدليات المتحدة خميس مشيط وأبها</h1>
 
-  <div class="cards-container">
-    <!-- يتم إدراج البطاقات تلقائيًا عبر JavaScript -->
-  </div>
+  <div class="cards-container"></div>
 
   <div class="footer-icons">
     <a href="https://unitedpharmacy.sa/ar/monthly-magazine">📘 مجلة العروض</a>
@@ -128,9 +133,11 @@
       card.className = 'card';
       card.innerHTML = `
         <h2>${name}</h2>
-        <a class="call" href="tel:${phone}">📞 اتصال</a>
-        <a class="whatsapp" href="${whatsapp}" target="_blank">💬 واتساب</a>
-        <a class="location" href="${location}" target="_blank">📍 موقع</a>
+        <div class="buttons">
+          <a class="call" href="tel:${phone}">📞 اتصال</a>
+          <a class="whatsapp" href="${whatsapp}" target="_blank">💬 واتساب</a>
+          <a class="location" href="${location}" target="_blank">📍 موقع</a>
+        </div>
         <button class="copy-btn" onclick="copyRow('${name}','${phone}','${whatsapp}','${location}')">📋 نسخ البيانات</button>
       `;
       container.appendChild(card);
