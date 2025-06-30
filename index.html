@@ -6,44 +6,50 @@
   <style>
     body {
       font-family: 'Tahoma', sans-serif;
-      background-color: #f4f6f9;
-      padding: 40px;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 20px;
       direction: rtl;
       text-align: center;
     }
 
     h1 {
-      color: #1a237e;
+      color: #0d47a1;
+      font-size: 32px;
       margin-bottom: 30px;
     }
 
-    table {
-      width: 100%;
-      max-width: 1100px;
-      margin: auto;
-      border-collapse: collapse;
-      background-color: #ffffff;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      border-radius: 8px;
-      overflow: hidden;
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
     }
 
-    th, td {
-      padding: 15px;
-      border-bottom: 1px solid #ddd;
-      font-size: 14px;
+    .card {
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 25px;
+      width: 310px;
+      text-align: right;
+      position: relative;
     }
 
-    th {
-      background-color: #1976D2;
-      color: white;
+    .card h2 {
+      font-size: 20px;
+      color: #0d47a1;
+      margin-bottom: 15px;
     }
 
-    td a {
-      padding: 8px 12px;
-      border-radius: 6px;
-      color: white;
+    .card a {
       text-decoration: none;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin-left: 8px;
+      font-size: 16px;
+      display: inline-block;
     }
 
     .call { background-color: #007BFF; }
@@ -51,27 +57,30 @@
     .location { background-color: #FF5722; }
 
     .copy-btn {
-      padding: 6px 10px;
       background-color: #607D8B;
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
+      padding: 10px 15px;
+      font-size: 14px;
       cursor: pointer;
+      margin-top: 10px;
+      width: 100%;
     }
 
     .footer-icons {
-      margin-top: 40px;
+      margin-top: 50px;
     }
 
     .footer-icons a {
       display: inline-block;
-      margin: 10px 20px;
-      padding: 15px 25px;
+      margin: 15px 25px;
+      padding: 18px 28px;
       background-color: #1976D2;
       color: white;
-      font-size: 18px;
+      font-size: 20px;
       text-decoration: none;
-      border-radius: 10px;
+      border-radius: 12px;
       transition: 0.3s;
     }
 
@@ -82,124 +91,51 @@
 </head>
 <body>
 
-  <h1>فروع صيدليات المتحدة</h1>
+  <h1>فروع صيدليات المتحدة خميس مشيط وأبها</h1>
 
-  <table>
-    <tr>
-      <th>اسم الصيدلية</th>
-      <th>اتصال</th>
-      <th>واتساب</th>
-      <th>الموقع</th>
-      <th>نسخ</th>
-    </tr>
-
-    <tr>
-      <td>صيدلية المتحدة 209 - البلد</td>
-      <td><a class="call" href="tel:+966557216730">📞</a></td>
-      <td><a class="whatsapp" href="https://wa.me/966557216730">💬</a></td>
-      <td><a class="location" href="https://maps.app.goo.gl/u5RDS1Tz29sSchr76?g_st=ipc">📍</a></td>
-      <td><button class="copy-btn" onclick="copyRow('صيدلية المتحدة 209 - البلد','+966557216730','https://wa.me/966557216730','https://maps.app.goo.gl/u5RDS1Tz29sSchr76?g_st=ipc')">نسخ</button></td>
-    </tr>
-    <tr>
-      <td>صيدلية المتحدة 46 - حي عتود</td>
-      <td><a class="call" href="tel:+966552689895">📞</a></td>
-      <td><a class="whatsapp" href="https://wa.me/966562689895">💬</a></td>
-      <td><a class="location" href="https://maps.app.goo.gl/W6QuFENfufWvSema6?g_st=ipc">📍</a></td>
-      <td><button class="copy-btn" onclick="copyRow('صيدلية المتحدة 46 - حي عتود','+966552689895','https://wa.me/966562689895','https://maps.app.goo.gl/W6QuFENfufWvSema6?g_st=ipc')">نسخ</button></td>
-    </tr>
-    <tr>
-      <td>صيدلية المتحدة 50 - حي الحسام</td>
-      <td><a class="call" href="tel:+966551208147">📞</a></td>
-      <td><a class="whatsapp" href="https://wa.me/966551208147">💬</a></td>
-      <td><a class="location" href="https://maps.app.goo.gl/FW9MDPc6biSKFVQGA?g_st=ipc">📍</a></td>
-      <td><button class="copy-btn" onclick="copyRow('صيدلية المتحدة 50 - حي الحسام','+966551208147','https://wa.me/966551208147','https://maps.app.goo.gl/FW9MDPc6biSKFVQGA?g_st=ipc')">نسخ</button></td>
-    </tr>
-    <tr>
-      <td>صيدلية المتحدة 178- حي الحسام</td>
-      <td><a class="call" href="tel:+966539657074">📞</a></td>
-      <td><a class="whatsapp" href="https://wa.me/966539657074">💬</a></td>
-      <td><a class="location" href="https://maps.app.goo.gl/Y9EXTLcNwPfdUWAQA">📍</a></td>
-      <td><button class="copy-btn" onclick="copyRow('صيدلية المتحدة 104','+966539657074','https://wa.me/966539657074','https://maps.app.goo.gl/Y9EXTLcNwPfdUWAQA')">نسخ</button></td>
-    </tr>
-    <!-- باقي الفروع -->
-    <tr>
-      <td>صيدلية المتحدة 337- مستوصف الثمال الطبي</td>
-      <td><a class="call" href="tel:+966539057750">📞</a></td>
-      <td><a class="whatsapp" href="https://wa.me/966539057750">💬</a></td>
-      <td><a class="location" href="https://maps.app.goo.gl/AyvbwJyBetPJXKt66?g_st=ipc">📍</a></td>
-      <td><button class="copy-btn" onclick="copyRow('صيدلية المتحدة 337','+966539057750','https://wa.me/966539057750','https://maps.app.goo.gl/AyvbwJyBetPJXKt66?g_st=ipc')">نسخ</button></td>
-    </tr>
-    <tr>
-      <td>صيدلية المتحدة 265- الشرفيه</td>
-      <td><a class="call" href="tel:+966555026471">📞</a></td>
-      <td><a class="whatsapp" href="https://wa.me/966555026471">💬</a></td>
-      <td><a class="location" href="https://maps.app.goo.gl/onSHEQxkhyXmJx8p8?g_st=ipc">📍</a></td>
-      <td><button class="copy-btn" onclick="copyRow('صيدلية المتحدة 265','+966555026471','https://wa.me/966555026471','https://maps.app.goo.gl/onSHEQxkhyXmJx8p8?g_st=ipc')">نسخ</button></td>
-    </tr>
-    <tr>
-      <td>صيدلية المتحدة 371-مستوصف الحرمين- الشرفيه</td>
-      <td><a class="call" href="tel:+966534939258">📞</a></td>
-      <td><a class="whatsapp" href="https://wa.me/966534939258">💬</a></td>
-      <td><a class="location" href="https://maps.app.goo.gl/s2hQVeTvgJFBTSLF8?g_st=ipc">📍</a></td>
-      <td><button class="copy-btn" onclick="copyRow('صيدلية المتحدة 371','+966500000107','https://wa.me/966534939258','https://maps.app.goo.gl/s2hQVeTvgJFBTSLF8?g_st=ipc')">نسخ</button></td>
-    </tr>
-    <tr>
-      <td>صيدلية المتحدة 179- الموسي</td>
-      <td><a class="call" href="tel:+966539627072">📞</a></td>
-      <td><a class="whatsapp" href="https://wa.me/966539627072">💬</a></td>
-      <td><a class="location" href="https://maps.app.goo.gl/4WXqgPXCzfJE2tE29?g_st=ipc">📍</a></td>
-      <td><button class="copy-btn" onclick="copyRow('صيدلية المتحدة 179','+966539627072','https://wa.me/966539627072','https://maps.app.goo.gl/4WXqgPXCzfJE2tE29?g_st=ipc')">نسخ</button></td>
-    </tr>
-    <tr>
-      <td>صيدلية المتحدة 70- الحي الراقي</td>
-      <td><a class="call" href="tel:+966554576287">📞</a></td>
-      <td><a class="whatsapp" href="https://wa.me/966554576287">💬</a></td>
-      <td><a class="location" href="https://maps.app.goo.gl/ycu9KYV7vxm6475GA?g_st=ipc">📍</a></td>
-      <td><button class="copy-btn" onclick="copyRow('صيدلية المتحدة 70','+966554576287','https://wa.me/966554576287','https://maps.app.goo.gl/ycu9KYV7vxm6475GA?g_st=ipc')">نسخ</button></td>
-    </tr>
-    <tr>
-      <td>صيدلية المتحدة 25-حي الرونه</td>
-      <td><a class="call" href="tel:+966551337103">📞</a></td>
-      <td><a class="whatsapp" href="https://wa.me/966551337103">💬</a></td>
-      <td><a class="location" href="https://maps.app.goo.gl/RGEd9V2uyWjZzQJu7?g_st=ipc">📍</a></td>
-      <td><button class="copy-btn" onclick="copyRow('صيدلية المتحدة 25','+966551337103','https://wa.me/966551337103','https://maps.app.goo.gl/RGEd9V2uyWjZzQJu7?g_st=ipc')">نسخ</button></td>
-    </tr>
-    <tr>
-      <td>صيدلية المتحدة 175- الرصراص</td>
-      <td><a class="call" href="tel:+966539643707">📞</a></td>
-      <td><a class="whatsapp" href="https://wa.me/966539643707">💬</a></td>
-      <td><a class="location" href="https://maps.app.goo.gl/f96Rq2GB2FMTtVEE7?g_st=ipc">📍</a></td>
-      <td><button class="copy-btn" onclick="copyRow('صيدلية المتحدة 175','+9665396437071','https://wa.me/966539643707','https://maps.app.goo.gl/f96Rq2GB2FMTtVEE7?g_st=ipc')">نسخ</button></td>
-    </tr>
-    <tr>
-      <td>صيدلية المتحدة 298</td>
-      <td><a class="call" href="tel:+96655038569">📞</a></td>
-      <td><a class="whatsapp" href="https://wa.me/96655038569">💬</a></td>
-      <td><a class="location" href="https://maps.app.goo.gl/aEwUUsSWbo3dpxCy6?g_st=ipc">📍</a></td>
-      <td><button class="copy-btn" onclick="copyRow('صيدلية المتحدة 298','+96655038569','https://wa.me/96655038569','https://maps.app.goo.gl/aEwUUsSWbo3dpxCy6?g_st=ipc')">نسخ</button></td>
-    </tr>
-    <tr>
-      <td>صيدلية المتحدة 176-ابها</td>
-      <td><a class="call" href="tel:+966552816395">📞</a></td>
-      <td><a class="whatsapp" href="https://wa.me/966552816395">💬</a></td>
-      <td><a class="location" href="https://maps.app.goo.gl/3P8Ti8VCTjpxXaJ8A?g_st=ipc">📍</a></td>
-      <td><button class="copy-btn" onclick="copyRow('صيدلية المتحدة 176','+966552816395','https://wa.me/966552816395','https://maps.app.goo.gl/3P8Ti8VCTjpxXaJ8A?g_st=ipc')">نسخ</button></td>
-    </tr>
-    <tr>
-      <td>صيدلية المتحدة 141- ابها</td>
-      <td><a class="call" href="tel:+966554084738">📞</a></td>
-      <td><a class="whatsapp" href="https://wa.me/966554084738">💬</a></td>
-      <td><a class="location" href="https://maps.app.goo.gl/H7eRT1XoSW6CwJjo8?g_st=ipc">📍</a></td>
-      <td><button class="copy-btn" onclick="copyRow('صيدلية المتحدة 141','+966554084738','https://wa.me/966554084738','https://maps.app.goo.gl/H7eRT1XoSW6CwJjo8?g_st=ipc')">نسخ</button></td>
-    </tr>
-  </table>
+  <div class="cards-container">
+    <!-- يتم إدراج البطاقات تلقائيًا عبر JavaScript -->
+  </div>
 
   <div class="footer-icons">
-    <a href="https://unitedpharmacy.sa/offers" target="_blank">📘 مجلة العروض</a>
+    <a href="https://unitedpharmacy.sa/ar/monthly-magazine">📘 مجلة العروض</a>
     <a href="https://www.unitedpharmacy.sa" target="_blank">🌐 الموقع الإلكتروني</a>
   </div>
 
   <script>
+    const branches = [
+      ["صيدلية المتحدة 209 - البلد", "+966557216730", "https://wa.me/966557216730", "https://maps.app.goo.gl/u5RDS1Tz29sSchr76?g_st=ipc"],
+      ["صيدلية المتحدة 46 - حي عتود", "+966552689895", "https://wa.me/966552689895", "https://maps.app.goo.gl/W6QuFENfufWvSema6?g_st=ipc"],
+      ["صيدلية المتحدة 50 - حي الحسام", "+966551208147", "https://wa.me/966551208147", "https://maps.app.goo.gl/YkdHPxT4jZLVuRmc8"],
+      ["صيدلية المتحدة 178- حي الحسام", "+966539657074", "https://wa.me/966539657074", "https://maps.app.goo.gl/Y9EXTLcNwPfdUWAQA"],
+      ["صيدلية المتحدة 337- مستوصف الثمال الطبي", "+966539057750", "https://wa.me/966539057750", "https://maps.app.goo.gl/AyvbwJyBetPJXKt66?g_st=ipc"],
+      ["صيدلية المتحدة 265- الشرفيه", "+966555026471", "https://wa.me/966555026471", "https://maps.app.goo.gl/onSHEQxkhyXmJx8p8?g_st=ipc"],
+      ["صيدلية المتحدة 371-مستوصف الحرمين- الشرفيه", "+966534939258", "https://wa.me/966534939258", "https://maps.app.goo.gl/s2hQVeTvgJFBTSLF8?g_st=ipc"],
+      ["صيدلية المتحدة 179- الموسي", "+966539627072", "https://wa.me/966539627072", "https://maps.app.goo.gl/4WXqgPXCzfJE2tE29?g_st=ipc"],
+      ["صيدلية المتحدة 16-الموسي", "+966554390471", "https://wa.me/966554390471", "https://maps.app.goo.gl/1HrFdZPRgGA8PfGXA"],
+      ["صيدلية المتحدة 70- الحي الراقي", "+966554576287", "https://wa.me/966554576287", "https://maps.app.goo.gl/ycu9KYV7vxm6475GA?g_st=ipc"],
+      ["صيدلية المتحدة 25-حي الرونه", "+966551337103", "https://wa.me/966551337103", "https://maps.app.goo.gl/RGEd9V2uyWjZzQJu7?g_st=ipc"],
+      ["صيدلية المتحدة 175- الرصراص", "+966539643707", "https://wa.me/966539643707", "https://maps.app.goo.gl/f96Rq2GB2FMTtVEE7?g_st=ipc"],
+      ["صيدلية المتحدة 425", "+966554738", "https://wa.me/966554738", "https://maps.app.goo.gl/mpSZKFBPfRfWxHmQ9?g_st=ipc"],
+      ["صيدلية المتحدة 298", "+966555038569", "https://wa.me/966555038569", "https://maps.app.goo.gl/aEwUUsSWbo3dpxCy6?g_st=ipc"],
+      ["صيدلية المتحدة 176-ابها", "+966552816395", "https://wa.me/966552816395", "https://maps.app.goo.gl/3P8Ti8VCTjpxXaJ8A?g_st=ipc"],
+      ["صيدلية المتحدة 141- ابها", "+966554084738", "https://wa.me/966554084738", "https://maps.app.goo.gl/H7eRT1XoSW6CwJjo8?g_st=ipc"]
+    ];
+
+    const container = document.querySelector('.cards-container');
+    branches.forEach(([name, phone, whatsapp, location]) => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <h2>${name}</h2>
+        <a class="call" href="tel:${phone}">📞 اتصال</a>
+        <a class="whatsapp" href="${whatsapp}" target="_blank">💬 واتساب</a>
+        <a class="location" href="${location}" target="_blank">📍 موقع</a>
+        <button class="copy-btn" onclick="copyRow('${name}','${phone}','${whatsapp}','${location}')">📋 نسخ البيانات</button>
+      `;
+      container.appendChild(card);
+    });
+
     function copyRow(name, phone, whatsapp, location) {
       const text = `${name}\n📞 ${phone}\n💬 ${whatsapp}\n📍 ${location}`;
       navigator.clipboard.writeText(text).then(() => {
