@@ -27,22 +27,15 @@
       font-size: 32px;
     }
 
-    .row {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-bottom: 30px;
-    }
-
     .card {
       background-color: #fff;
       border-radius: 16px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       padding: 25px;
-      width: 310px;
+      width: 100%;
+      max-width: 400px;
+      margin: 20px auto;
       text-align: center;
-      position: relative;
     }
 
     .card h2 {
@@ -54,9 +47,9 @@
     .card .buttons {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
       gap: 10px;
       margin-bottom: 10px;
+      flex-wrap: wrap;
     }
 
     .card a {
@@ -111,14 +104,7 @@
     <h1>فروع صيدليات المتحدة خميس مشيط وأبها</h1>
   </div>
 
-  <div class="row"></div>
-  <div class="row"></div>
-  <div class="row"></div>
-  <div class="row"></div>
-  <div class="row"></div>
-  <div class="row"></div>
-  <div class="row"></div>
-  <div class="row"></div>
+  <div id="cards-container"></div>
 
   <div class="footer-icons">
     <a href="https://unitedpharmacy.sa/ar/monthly-magazine">📘 مجلة العروض</a>
@@ -126,56 +112,41 @@
   </div>
 
   <script>
-    const groups = [
-      [
-        ["صيدلية المتحدة 209 - البلد", "+966557216730", "https://wa.me/966557216730", "https://maps.app.goo.gl/u5RDS1Tz29sSchr76?g_st=ipc"],
-        ["صيدلية المتحدة 46 - حي عتود", "+966552689895", "https://wa.me/966552689895", "https://maps.app.goo.gl/W6QuFENfufWvSema6?g_st=ipc"]
-      ],
-      [
-        ["صيدلية المتحدة 50 - حي الحسام", "+966551208147", "https://wa.me/966551208147", "https://maps.app.goo.gl/YkdHPxT4jZLVuRmc8"],
-        ["صيدلية المتحدة 178- حي الحسام", "+966539657074", "https://wa.me/966539657074", "https://maps.app.goo.gl/Y9EXTLcNwPfdUWAQA"],
-        ["صيدلية المتحدة 337- مستوصف الثمال الطبي", "+966539057750", "https://wa.me/966539057750", "https://maps.app.goo.gl/AyvbwJyBetPJXKt66?g_st=ipc"]
-      ],
-      [
-        ["صيدلية المتحدة 425", "+966554738", "https://wa.me/966554738", "https://maps.app.goo.gl/mpSZKFBPfRfWxHmQ9?g_st=ipc"]
-      ],
-      [
-        ["صيدلية المتحدة 265- الشرفيه", "+966555026471", "https://wa.me/966555026471", "https://maps.app.goo.gl/onSHEQxkhyXmJx8p8?g_st=ipc"],
-        ["صيدلية المتحدة 371-مستوصف الحرمين- الشرفيه", "+966534939258", "https://wa.me/966534939258", "https://maps.app.goo.gl/s2hQVeTvgJFBTSLF8?g_st=ipc"]
-      ],
-      [
-        ["صيدلية المتحدة 25-حي الرونه", "+966551337103", "https://wa.me/966551337103", "https://maps.app.goo.gl/RGEd9V2uyWjZzQJu7?g_st=ipc"],
-        ["صيدلية المتحدة 175- الرصراص", "+966539643707", "https://wa.me/966539643707", "https://maps.app.goo.gl/f96Rq2GB2FMTtVEE7?g_st=ipc"],
-        ["صيدلية المتحدة 266", "+966000000000", "https://wa.me/966000000000", "https://maps.google.com"]
-      ],
-      [
-        ["صيدلية المتحدة 179- الموسي", "+966539627072", "https://wa.me/966539627072", "https://maps.app.goo.gl/4WXqgPXCzfJE2tE29?g_st=ipc"],
-        ["صيدلية المتحدة 70- الحي الراقي", "+966554576287", "https://wa.me/966554576287", "https://maps.app.goo.gl/ycu9KYV7vxm6475GA?g_st=ipc"],
-        ["صيدلية المتحدة 16-الموسي", "+966554390471", "https://wa.me/966554390471", "https://maps.app.goo.gl/1HrFdZPRgGA8PfGXA"]
-      ],
-      [
-        ["صيدلية المتحدة 298", "+966555038569", "https://wa.me/966555038569", "https://maps.app.goo.gl/aEwUUsSWbo3dpxCy6?g_st=ipc"],
-        ["صيدلية المتحدة 176-ابها", "+966552816395", "https://wa.me/966552816395", "https://maps.app.goo.gl/3P8Ti8VCTjpxXaJ8A?g_st=ipc"],
-        ["صيدلية المتحدة 141- ابها", "+966554084738", "https://wa.me/966554084738", "https://maps.app.goo.gl/H7eRT1XoSW6CwJjo8?g_st=ipc"]
-      ]
+    const pharmacies = [
+      ["صيدلية المتحدة 209 - البلد", "+966557216730", "https://wa.me/966557216730", "https://maps.app.goo.gl/u5RDS1Tz29sSchr76?g_st=ipc"],
+      ["صيدلية المتحدة 46 - حي عتود", "+966552689895", "https://wa.me/966552689895", "https://maps.app.goo.gl/W6QuFENfufWvSema6?g_st=ipc"],
+      ["صيدلية المتحدة 50 - حي الحسام", "+966551208147", "https://wa.me/966551208147", "https://maps.app.goo.gl/YkdHPxT4jZLVuRmc8"],
+      ["صيدلية المتحدة 178- حي الحسام", "+966539657074", "https://wa.me/966539657074", "https://maps.app.goo.gl/Y9EXTLcNwPfdUWAQA"],
+      ["صيدلية المتحدة 337- مستوصف الثمال الطبي", "+966539057750", "https://wa.me/966539057750", "https://maps.app.goo.gl/AyvbwJyBetPJXKt66?g_st=ipc"],
+      ["صيدلية المتحدة 425", "+966554738", "https://wa.me/966554738", "https://maps.app.goo.gl/mpSZKFBPfRfWxHmQ9?g_st=ipc"],
+      ["صيدلية المتحدة 265- الشرفيه", "+966555026471", "https://wa.me/966555026471", "https://maps.app.goo.gl/onSHEQxkhyXmJx8p8?g_st=ipc"],
+      ["صيدلية المتحدة 371-مستوصف الحرمين- الشرفيه", "+966534939258", "https://wa.me/966534939258", "https://maps.app.goo.gl/s2hQVeTvgJFBTSLF8?g_st=ipc"],
+      ["صيدلية المتحدة 25-حي الرونه", "+966551337103", "https://wa.me/966551337103", "https://maps.app.goo.gl/RGEd9V2uyWjZzQJu7?g_st=ipc"],
+      ["صيدلية المتحدة 175- الرصراص", "+966539643707", "https://wa.me/966539643707", "https://maps.app.goo.gl/f96Rq2GB2FMTtVEE7?g_st=ipc"],
+      ["صيدلية المتحدة 266", "+966000000000", "https://wa.me/966000000000", "https://maps.google.com"],
+      ["صيدلية المتحدة 179- الموسي", "+966539627072", "https://wa.me/966539627072", "https://maps.app.goo.gl/4WXqgPXCzfJE2tE29?g_st=ipc"],
+      ["صيدلية المتحدة 70- الحي الراقي", "+966554576287", "https://wa.me/966554576287", "https://maps.app.goo.gl/ycu9KYV7vxm6475GA?g_st=ipc"],
+      ["صيدلية المتحدة 16-الموسي", "+966554390471", "https://wa.me/966554390471", "https://maps.app.goo.gl/1HrFdZPRgGA8PfGXA"],
+      ["صيدلية المتحدة 298", "+966555038569", "https://wa.me/966555038569", "https://maps.app.goo.gl/aEwUUsSWbo3dpxCy6?g_st=ipc"],
+      ["صيدلية المتحدة 176-ابها", "+966552816395", "https://wa.me/966552816395", "https://maps.app.goo.gl/3P8Ti8VCTjpxXaJ8A?g_st=ipc"],
+      ["صيدلية المتحدة 141- ابها", "+966554084738", "https://wa.me/966554084738", "https://maps.app.goo.gl/H7eRT1XoSW6CwJjo8?g_st=ipc"]
     ];
 
-    const rows = document.querySelectorAll('.row');
-    groups.forEach((group, i) => {
-      group.forEach(([name, phone, whatsapp, location]) => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
-          <h2>${name}</h2>
-          <div class="buttons">
-            <a class="call" href="tel:${phone}">📞 اتصال</a>
-            <a class="whatsapp" href="${whatsapp}" target="_blank">💬 واتساب</a>
-            <a class="location" href="${location}" target="_blank">📍 موقع</a>
-          </div>
-          <button class="copy-btn" onclick="copyRow('${name}','${phone}','${whatsapp}','${location}')">📋 نسخ البيانات</button>
-        `;
-        rows[i].appendChild(card);
-      });
+    const container = document.getElementById("cards-container");
+
+    pharmacies.forEach(([name, phone, whatsapp, location]) => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <h2>${name}</h2>
+        <div class="buttons">
+          <a class="call" href="tel:${phone}">📞 اتصال</a>
+          <a class="whatsapp" href="${whatsapp}" target="_blank">💬 واتساب</a>
+          <a class="location" href="${location}" target="_blank">📍 موقع</a>
+        </div>
+        <button class="copy-btn" onclick="copyRow('${name}','${phone}','${whatsapp}','${location}')">📋 نسخ البيانات</button>
+      `;
+      container.appendChild(card);
     });
 
     function copyRow(name, phone, whatsapp, location) {
