@@ -33,7 +33,7 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       padding: 25px;
       width: 100%;
-      max-width: 400px;
+      max-width: 700px;
       margin: 20px auto;
       text-align: center;
     }
@@ -41,15 +41,15 @@
     .card h2 {
       font-size: 20px;
       color: #0d47a1;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
     .card .buttons {
       display: flex;
       justify-content: center;
       gap: 10px;
-      margin-bottom: 10px;
       flex-wrap: wrap;
+      margin-bottom: 15px;
     }
 
     .card a {
@@ -74,7 +74,7 @@
       padding: 10px 15px;
       font-size: 14px;
       cursor: pointer;
-      width: 100%;
+      width: auto;
     }
 
     .footer-icons {
@@ -143,8 +143,8 @@
           <a class="call" href="tel:${phone}">📞 اتصال</a>
           <a class="whatsapp" href="${whatsapp}" target="_blank">💬 واتساب</a>
           <a class="location" href="${location}" target="_blank">📍 موقع</a>
+          <button class="copy-btn" onclick="copyRow('${name}','${phone}','${whatsapp}','${location}')">📋 نسخ البيانات</button>
         </div>
-        <button class="copy-btn" onclick="copyRow('${name}','${phone}','${whatsapp}','${location}')">📋 نسخ البيانات</button>
       `;
       container.appendChild(card);
     });
